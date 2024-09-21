@@ -1,0 +1,10 @@
+{
+    "voters": [
+        {
+            "voter_id": 1,
+            "name": "Votante 1",
+            "section": 32,
+            "voted": false
+        }
+    ]
+}

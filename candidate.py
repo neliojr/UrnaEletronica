@@ -10,9 +10,10 @@ class Candidate:
 class CandidateManager:
     def __init__(self):
         self.candidates = []
+        self.database = './data/candidates.json'
 
     def load_candidates(self, database):
-        with open(database, 'r') as file:
+        with open(self.database, 'r') as file:
             data = json.load(file)
             for item in data['candidates']:
                 candidate = Candidate(item['name'], item['number'], item["role"], item["votes"])
@@ -26,7 +27,7 @@ class CandidateManager:
         for candidate in self.candidates:
             if candidate.role == role and candidate.number == number:
                 candidate.votes += 1
-                self.save_candidates('./data/database.json')
+                self.save_candidates(self.database)
 
     def save_candidates(self, database):
         data = {'candidates': []}
@@ -43,4 +44,4 @@ class CandidateManager:
     def create_candidate(self, name, number, role):
         new_candidate = Candidate(name, number, role, 0)
         self.candidates.append(new_candidate)
-        self.save_candidates('./data/database.json')
+        self.save_candidates(self.database)
