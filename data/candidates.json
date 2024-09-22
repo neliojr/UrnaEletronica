@@ -1,22 +1,3 @@
 {
-    "candidates": [
-        {
-            "name": "Candidato A",
-            "number": 11,
-            "role": "Presidente",
-            "votes": 17
-        },
-        {
-            "name": "Candidato B",
-            "number": 55,
-            "role": "Presidente",
-            "votes": 15
-        },
-        {
-            "name": "Nelio",
-            "number": 45,
-            "role": "Presidente",
-            "votes": 26
-        }
-    ]
+    "candidates": []
 }
