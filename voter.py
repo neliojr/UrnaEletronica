@@ -1,4 +1,5 @@
 import json
+import random
 
 class Voter:
     def __init__(self, voter_id, name, section, voted):
@@ -6,6 +7,7 @@ class Voter:
         self.name = name
         self.section = section
         self.voted = voted
+
 
 class VoterManager:
     def __init__(self):
@@ -58,12 +60,8 @@ class VoterManager:
         ]
     
     # criar eleitor.
-    def create(self, voter_id, name, section):
-        for voter in self.voters:
-            if voter.voter_id == voter_id:
-                return 'voter_id already registered'
-            
-        new_voter = Voter(voter_id, name, section, False)
+    def create(self, name, section):
+        new_voter = Voter(self.generate_id(), name, section, False)
         self.voters.append(new_voter)
         self.save()
     
@@ -74,3 +72,35 @@ class VoterManager:
             if not (voter.voter_id == voter_id)
         ]
         self.save()
+
+    # atualizar um eleitor.
+    def update(self, voter_id, name, section):
+        for voter in self.voters:
+            if voter.voter_id == voter_id:
+                if name is not None:
+                    voter.name = name
+                if section is not None:
+                    voter.section = section
+                self.save()
+        return 'Voter not found'
+    
+    # buscar um eleitor.
+    def find(self, voter_id):
+        for voter in self.voters:
+            if voter.voter_id == voter_id:
+                return {
+                    'voter_id': voter.voter_id,
+                    'name': voter.name,
+                    'section': voter.section,
+                    'voted': voter.voted
+                }
+        return None
+    
+    def generate_id(self):
+        while True:
+            voter_id = random.randint(1, 999999)
+            check_exists = self.find(voter_id)
+            if check_exists == None:
+                break
+
+        return voter_id

@@ -81,3 +81,16 @@ class CandidateManager:
             if candidate.role == role and candidate.number == number:
                 candidate.votes += 1
                 self.save()
+    
+    # buscar um candidato.
+    def find(self, role, number):
+        for candidate in self.candidates:
+            if candidate.role == role and candidate.number == number:
+                return {
+                    'name': candidate.name,
+                    'number': candidate.number,
+                    'role': candidate.role,
+                    'votes': candidate.votes
+                }
+        return None
+    

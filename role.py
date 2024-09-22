@@ -74,3 +74,15 @@ class RoleManager:
             if not (role.name == name)
         ]
         self.save()
+    
+    # buscar um cargo.
+    def find(self, name):
+        for role in self.roles:
+            if role.name == name:
+                return {
+                    'name': role.name,
+                    'digits': role.digits,
+                    'vice': role.vice
+                }
+        return None
+    
