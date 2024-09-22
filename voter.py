@@ -104,3 +104,11 @@ class VoterManager:
                 break
 
         return voter_id
+    
+    def voter_voted(self, voter_id):
+        for voter in self.voters:
+            if voter.voter_id == voter_id:
+                if voter.voted:
+                    return 'eleitor já votou.'
+                voter.voted = True
+                self.save()
