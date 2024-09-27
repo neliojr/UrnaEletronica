@@ -1,27 +1,15 @@
 {
     "voters": [
         {
-            "voter_id": 495762,
-            "name": "Nelio",
-            "section": 32,
-            "voted": true
+            "voter_id": 961307,
+            "name": "Isabella Costa Andrade",
+            "section": 1,
+            "voted": false
         },
         {
-            "voter_id": 813296,
-            "name": "Nelio",
-            "section": 32,
-            "voted": true
-        },
-        {
-            "voter_id": 206751,
-            "name": "Nelio",
-            "section": 32,
-            "voted": true
-        },
-        {
-            "voter_id": 941788,
-            "name": "Nelio",
-            "section": 32,
+            "voter_id": 595054,
+            "name": "Nelio Alves da Silva Junior",
+            "section": 1,
             "voted": false
         }
     ]

@@ -1,3 +1,16 @@
 {
-    "candidates": []
+    "candidates": [
+        {
+            "name": "Bolsonaro",
+            "number": 22,
+            "role": "Presidente",
+            "votes": 0
+        },
+        {
+            "name": "Lula",
+            "number": 13,
+            "role": "Presidente",
+            "votes": 0
+        }
+    ]
 }
