@@ -2,9 +2,10 @@ import json
 import random
 
 class Voter:
-    def __init__(self, voter_id, name, section, voted):
+    def __init__(self, voter_id, name, date_of_birth, section, voted):
         self.voter_id = voter_id
         self.name = name
+        self.date_of_birth = date_of_birth
         self.section = section
         self.voted = voted
 
@@ -22,7 +23,7 @@ class VoterManager:
                 data = json.load(file)
 
                 for item in data['voters']:
-                    voter = Voter(item['voter_id'], item['name'], item["section"], item["voted"])
+                    voter = Voter(item['voter_id'], item['name'], item["section"], item["voted"], item["date_of_birth"])
                     self.voters.append(voter)
         except: # criando arquio JSON caso não exista.
             data = {
@@ -40,6 +41,7 @@ class VoterManager:
             data['voters'].append({
                 'voter_id': voter.voter_id,
                 'name': voter.name,
+                'date_of_birth': voter.date_of_birth,
                 'section': voter.section,
                 'voted': voter.voted
             })
@@ -53,6 +55,7 @@ class VoterManager:
             {
                 'voter_id': voter.voter_id,
                 'name': voter.name,
+                'date_of_birth': voter.date_of_birth,
                 'section': voter.section,
                 'voted': voter.voted
             }
@@ -60,8 +63,8 @@ class VoterManager:
         ]
     
     # criar eleitor.
-    def create(self, name, section):
-        new_voter = Voter(self.generate_id(), name, section, False)
+    def create(self, name, date_of_birth, section):
+        new_voter = Voter(self.generate_id(), name, date_of_birth, section, False)
         self.voters.append(new_voter)
         self.save()
     
@@ -91,6 +94,7 @@ class VoterManager:
                 return {
                     'voter_id': voter.voter_id,
                     'name': voter.name,
+                    'date_of_birth': voter.date_of_birth,
                     'section': voter.section,
                     'voted': voter.voted
                 }

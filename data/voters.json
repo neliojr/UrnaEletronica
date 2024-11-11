@@ -1,27 +1,17 @@
 {
     "voters": [
         {
-            "voter_id": 495762,
-            "name": "Nelio",
-            "section": 32,
-            "voted": true
+            "voter_id": 597476,
+            "name": "Nelio Alves da Silva J\u00fanior",
+            "date_of_birth": "08/12/2004",
+            "section": 1,
+            "voted": false
         },
         {
-            "voter_id": 813296,
-            "name": "Nelio",
-            "section": 32,
-            "voted": true
-        },
-        {
-            "voter_id": 206751,
-            "name": "Nelio",
-            "section": 32,
-            "voted": true
-        },
-        {
-            "voter_id": 941788,
-            "name": "Nelio",
-            "section": 32,
+            "voter_id": 467313,
+            "name": "Isabella Costa Andrade",
+            "date_of_birth": "09/03/2005",
+            "section": 1,
             "voted": false
         }
     ]

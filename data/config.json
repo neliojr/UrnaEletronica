@@ -1,7 +1,9 @@
 {
     "config": [
         {
-            "section": 32
+            "section": 32,
+            "enable_gui": false,
+            "admin_pass": "1234"
         }
     ]
 }

@@ -1,3 +1,9 @@
 {
-    "roles": []
+    "roles": [
+        {
+            "name": "Presidente",
+            "digits": 2,
+            "vice": true
+        }
+    ]
 }
